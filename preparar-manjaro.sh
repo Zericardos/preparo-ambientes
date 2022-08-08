@@ -2,10 +2,10 @@
 
 # atualizar sistema
 sudo pacman -Syyu
-sudo pacman -S xscreensaver
+sudo pacman -S --noconfirm xscreensaver
 
 # instalar com snap
-sudo pacman -S snapd && sudo systemctl enable --now snapd.socket
+sudo pacman -S --noconfirm snapd && sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 sudo snap install pycharm-professional --classic
 sudo snap install code --classic
