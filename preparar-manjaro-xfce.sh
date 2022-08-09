@@ -2,7 +2,14 @@
 
 # atualizar sistema
 sudo pacman -Syyu
+sudo pacman -S --noconfirm base-devel
+
 sudo pacman -S --noconfirm xscreensaver
+# Autostart
+# To launch custom applications when Xfce starts up, click the Applications Menu > Settings > Settings Manager and then
+# choose the Session and Startup option and click the tab Application Autostart. You will see a list of programs that
+# get launched on startup. To add an entry, click the Add button and fill out the form, specifying the path to an
+# executable you want to run.
 
 # instalar com snap
 sudo pacman -S --noconfirm snapd && sudo systemctl enable --now snapd.socket
@@ -19,4 +26,4 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm -rf ~/miniconda3/miniconda.sh
 ~/miniconda3/bin/conda init bash
 ~/miniconda3/bin/conda init zsh
-
+atualizar conda
