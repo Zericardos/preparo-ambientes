@@ -2,10 +2,14 @@
 
 # atualizar sistema
 sudo pacman -Syyu
+sudo pacman-mirrors -f && sudo pacman -Syyu
 sudo pacman -S --noconfirm base-devel
-
+echo 'source "/usr/share/git/completion/git-completion.bash"' >> ~/.bashrc
 sudo pacman -S --noconfirm xscreensaver
-# Autostart
+mkdir -p ~/.config/systemd/user/
+cd "$(pwd)" && cp xscreensaver.service ~/.config/systemd/user/xscreensaver.service || exit 1
+systemctl --user enable xscreensaver
+# Autostart if commands above didn't work
 # To launch custom applications when Xfce starts up, click the Applications Menu > Settings > Settings Manager and then
 # choose the Session and Startup option and click the tab Application Autostart. You will see a list of programs that
 # get launched on startup. To add an entry, click the Add button and fill out the form, specifying the path to an
