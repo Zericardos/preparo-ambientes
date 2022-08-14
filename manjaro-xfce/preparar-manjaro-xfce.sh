@@ -15,13 +15,14 @@ systemctl --user enable xscreensaver
 # get launched on startup. To add an entry, click the Add button and fill out the form, specifying the path to an
 # executable you want to run.
 
-# instalar com snap
+# instalar pacotes com snap
 sudo pacman -S --noconfirm snapd && sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 sudo snap install pycharm-professional --classic
 sudo snap install code --classic
 sudo snap install kate --classic
 sudo snap install ksnip
+sudo snap install bitwarden
 
 # install Miniconda
 mkdir -p ~/miniconda3
@@ -30,4 +31,4 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm -rf ~/miniconda3/miniconda.sh
 ~/miniconda3/bin/conda init bash
 ~/miniconda3/bin/conda init zsh
-atualizar conda
+conda update conda
