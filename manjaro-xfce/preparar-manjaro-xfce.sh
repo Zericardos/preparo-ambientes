@@ -19,10 +19,11 @@ systemctl --user enable xscreensaver
 sudo pacman -S --noconfirm snapd && sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 sudo snap install pycharm-professional --classic
+sudo snap install audacity
+sudo snap install bitwarden
 sudo snap install code --classic
 sudo snap install kate --classic
 sudo snap install ksnip
-sudo snap install bitwarden
 
 # install Miniconda
 mkdir -p ~/miniconda3
