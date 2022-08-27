@@ -14,6 +14,9 @@ systemctl --user enable xscreensaver
 # choose the Session and Startup option and click the tab Application Autostart. You will see a list of programs that
 # get launched on startup. To add an entry, click the Add button and fill out the form, specifying the path to an
 # executable you want to run.
+cd ~ || exit 1
+sudo pacman -S --noconfirm jre-openjdk-headless jre-openjdk jdk-openjdk openjdk-doc openjdk-src
+yay -S jre jdk
 
 # instalar pacotes com snap
 sudo pacman -S --noconfirm snapd && sudo systemctl enable --now snapd.socket
