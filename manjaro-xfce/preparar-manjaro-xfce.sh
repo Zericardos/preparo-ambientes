@@ -20,6 +20,21 @@ sudo pacman -S --noconfirm jre-openjdk-headless jre-openjdk jdk-openjdk openjdk-
 yay -S jre jdk
 # R
 sudo pacman -S --noconfirm r
+yay -S rstudio-desktop-bin
+# enable Multicore support
+yay -S openblas-lapack
+# Troubleshooting R
+# Generally, packages for your R software can be installed via the command install.packages() or by using the menu in
+# RStudio. Depending on your manjaro installation, some packages can't be installed by default. If you encounter an
+# error message saying the command "gfortran" is unknown, then your system is unable to interpret parts of the source
+# code. This problem can simply be fixed by installing "gcc-fortran" via your favorite Manjaro package manager
+# (e.g. Pamac) or by using the console:
+sudo pacman -S gcc-fortran
+#Most text mining packages in R require rjava, if you receive an error message related to this, run the following
+# commands in Konsole or in console of your choice
+export JAVA_LIBS="$JAVA_LIBS -ldl"
+sudo R CMD javareconf
+
 
 # instalar pacotes com snap
 sudo pacman -S --noconfirm snapd && sudo systemctl enable --now snapd.socket
