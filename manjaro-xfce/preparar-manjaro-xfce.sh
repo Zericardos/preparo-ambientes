@@ -29,7 +29,8 @@ yay -S openblas-lapack
 # error message saying the command "gfortran" is unknown, then your system is unable to interpret parts of the source
 # code. This problem can simply be fixed by installing "gcc-fortran" via your favorite Manjaro package manager
 # (e.g. Pamac) or by using the console:
-sudo pacman -S gcc-fortran
+sudo pacman -S noconfirm gcc-fortran
+sudo pacman -S noconfirm cmake  
 #Most text mining packages in R require rjava, if you receive an error message related to this, run the following
 # commands in Konsole or in console of your choice
 export JAVA_LIBS="$JAVA_LIBS -ldl"
