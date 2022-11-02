@@ -5,6 +5,7 @@ sudo pacman -Syyu
 sudo pacman-mirrors -f && sudo pacman -Syyu
 sudo pacman -S --noconfirm base-devel
 echo 'source "/usr/share/git/completion/git-completion.bash"' >> ~/.bashrc
+sudo pacman -S --noconfirm redshift
 sudo pacman -S --noconfirm xscreensaver
 mkdir -p ~/.config/systemd/user/
 cd "$(pwd)" && cp xscreensaver.service ~/.config/systemd/user/xscreensaver.service || exit 1
@@ -15,6 +16,8 @@ systemctl --user enable xscreensaver
 # get launched on startup. To add an entry, click the Add button and fill out the form, specifying the path to an
 # executable you want to run.
 cd ~ || exit 1
+# redshift
+sudo pacman -Syu --noconfirm redshift
 # java
 sudo pacman -S --noconfirm jre-openjdk-headless jre-openjdk jdk-openjdk openjdk-doc openjdk-src
 yay -S jre jdk
