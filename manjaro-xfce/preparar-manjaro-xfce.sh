@@ -38,7 +38,8 @@ sudo pacman -S noconfirm cmake
 # commands in Konsole or in console of your choice
 export JAVA_LIBS="$JAVA_LIBS -ldl"
 sudo R CMD javareconf
-
+# install lib for rstudio
+sudo pacman -S noconfirm openssl-1.1
 
 # instalar pacotes com snap
 sudo pacman -S --noconfirm snapd && sudo systemctl enable --now snapd.socket
