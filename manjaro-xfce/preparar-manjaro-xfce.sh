@@ -27,7 +27,7 @@ atualizar_sistema(){
   sudo pacman -S --noconfirm go
   echo "Baixando repositório yay"
   git clone https://aur.archlinux.org/yay.git
-  cd yay
+  cd yay || exit 1
   echo "Compilando e instalando o programa YAY"
   sudo -u "$(whoami)" makepkg -si
   makepkg -si
@@ -45,7 +45,7 @@ atualizar_sistema(){
   # RStudio. Depending on your manjaro installation, some packages can't be installed by default. If you encounter an
   # error message saying the command "gfortran" is unknown, then your system is unable to interpret parts of the source
   # code. This problem can simply be fixed by installing "gcc-fortran" via your favorite Manjaro package manager
-   (e.g. Pamac) or by using the console:
+  # (e.g. Pamac) or by using the console:
   sudo pacman -S --noconfirm gcc-fortran
   sudo pacman -S --noconfirm cmake
    #Most text mining packages in R require rjava, if you receive an error message related to this, run the following
