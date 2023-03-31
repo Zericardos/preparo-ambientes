@@ -8,6 +8,7 @@ atualizar_sistema(){
   sudo pacman-mirrors -f && sudo pacman -Syyu
   sudo pacman -S --noconfirm base-devel
   echo 'source "/usr/share/git/completion/git-completion.bash"' >> ~/.bashrc
+  sudo pacman -S --noconfirm audacity
   sudo pacman -S --noconfirm redshift
   sudo pacman -S --noconfirm xscreensaver
   mkdir -p ~/.config/systemd/user/
@@ -59,7 +60,6 @@ atualizar_sistema(){
   sudo pacman -S --noconfirm snapd && sudo systemctl enable --now snapd.socket
   sudo ln -s /var/lib/snapd/snap /snap
   sudo snap install pycharm-professional --classic
-  sudo snap install audacity
   sudo snap install bitwarden
   sudo snap install code --classic
   sudo snap install kate --classic
