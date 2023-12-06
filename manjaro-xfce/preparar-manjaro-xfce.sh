@@ -55,7 +55,7 @@ atualizar_sistema(){
   sudo R CMD javareconf
    # install lib for rstudio
   sudo pacman -S --noconfirm openssl-1.1
-
+  pamac install xclip
   # instalar pacotes com snap
   sudo pacman -S --noconfirm snapd && sudo systemctl enable --now snapd.socket
   sudo ln -s /var/lib/snapd/snap /snap
