@@ -1,13 +1,14 @@
 #!/bin/bash
-
+#source init.sh
 atualizar_sistema(){
-  # atualizar sistema
+  pecho "Atualizando sistema"
+  exit 1
   sudo pacman -Syyu
-  # atualizando data e hora
+  pecho "Atualizando data e hora"
   imedatectl set-ntp true
   sudo pacman-mirrors -f && sudo pacman -Syyu
   sudo pacman -S --noconfirm base-devel
-  echo 'source "/usr/share/git/completion/git-completion.bash"' >> ~/.bashrc
+  pecho 'source "/usr/share/git/completion/git-completion.bash"' >> ~/.bashrc
   sudo pacman -S --noconfirm audacity
   sudo pacman -S --noconfirm redshift
   sudo pacman -S --noconfirm xscreensaver
