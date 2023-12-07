@@ -16,18 +16,35 @@ BLINK=$(tput blink)
 REVERSE=$(tput smso)
 UNDERLINE=$(tput smul)
 
+# utils
 pecho(){
   local msg="$1"
-  if [ -z "$2" ]; then
+  case "$2" in
+    "WARNING")
+      local level_msg="$2"
+      local level_color="$RED";;
+    *)
+      local level_msg="INFO"
+      local level_color="$YELLOW";;
+  esac
+  if [ -z "$3" ]; then
     local color_msg="$NORMAL"
   else
-    local color_msg="$2"
+    local color_msg="$3"
   fi
-  printf "${YELLOW}%(%Y-%m-%d %H:%M:%S)T---INFO---:${color_msg}${msg}${NORMAL}"
+  printf "%(%Y-%m-%d %H:%M:%S)T---${level_color}$level_msg${NORMAL}: ${color_msg}${msg}${NORMAL}\n"
 }
-export -f pecho
+
+cd_local_script(){
+  local SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+  cdm "$SCRIPT_DIR"
+  echo "$SCRIPT_DIR"
+}
+
+export -f pecho cdm cd_local_script
+
 cdm(){
-cd "$1" || { pecho "The directory $1 doesn’t exist. Exiting. "; exit 1; }
+  cd "$1" || { pecho "The directory $1 doesn’t exist. Exiting. "; exit 1; }
 }
 
 install_with_pacman() {

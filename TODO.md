@@ -1,3 +1,7 @@
+# Funcional
+- adicionar opção de execução -v (verbose)
+# Estrutura
+- considerar usar num módulo separado para as funções utilitárias, e.g, no **kinit.sh** `source ../utils/f_utils`
 # Testes
 - criar máquina virtual, considerar docker e rodar todos os gerenciadores que utilizo principalmente (apt e pacman)
 # Logs

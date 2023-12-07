@@ -1,7 +1,11 @@
 #!/bin/bash
-#source init.sh
+pacman_install(){
+  local package="$1"
+  sudo pacman -S --noconfirm "$package" || pecho "O pacote $package não foi instalado" "WARNING"
+}
 atualizar_sistema(){
   pecho "Atualizando sistema"
+  return 1
   exit 1
   sudo pacman -Syyu
   pecho "Atualizando data e hora"
