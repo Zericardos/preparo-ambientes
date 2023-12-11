@@ -1,5 +1,10 @@
 # Funcional
+- criar arquivo de log
+- separar pacman em KDE e XFCE
+- herdar funções utilitárias de modo que elas executassem no próprio script, não do módulo original (talvez um source nelas resolva)
 - adicionar opção de execução -v (verbose)
+# Fix
+- git clone em repositório para diretório já existente, remover o antigo e então clonar (yay)
 # Estrutura
 - considerar usar num módulo separado para as funções utilitárias, e.g, no **kinit.sh** `source ../utils/f_utils`
 # Testes
