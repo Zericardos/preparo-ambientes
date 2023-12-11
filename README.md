@@ -1,9 +1,11 @@
 # preparo-ambientes
 Compilado de scripts que configuram o sistema, instalam os programas que mais uso e os configuram
+`bash -x init.sh`
 
-# redshift
-## Post Installation
-### Playing around with Redshift
+# Rápido usos e configs sobre alguns pacotes
+## redshift
+### Post Installation
+#### Playing around with Redshift
 There are only a few parameters you need for finding the right settings. These are:
 
 - v for verbose output.
@@ -17,6 +19,7 @@ See below the command where settings are used in my config file:
 To see all the command for Redshift, run the following in the terminal:
 
 `redshift -h`
+
 ### Config File
 Once you’re happy with your settings the next step is to create a config file in the folder *~/.config/*
 

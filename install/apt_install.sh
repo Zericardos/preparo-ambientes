@@ -1,7 +1,7 @@
 #!/bin/bash
 
 atualizar_sistema(){
-  # atualizar sistema
+  pecho "atualizar sistema"
   sudo pacman -Syyu
   # atualizando data e hora
   imedatectl set-ntp true
